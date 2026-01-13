@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lora_from_scratch"
+version = "0.1.0"
+description = "A clean, educational implementation of Low-Rank Adaptation (LoRA) for PyTorch models."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "torch>=2.4.0",
+    "transformers",
+    "datasets",
+    "wandb",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "isort",
+    "mypy",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
