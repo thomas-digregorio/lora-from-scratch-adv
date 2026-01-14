@@ -96,9 +96,14 @@ In this project, we separated the **structural verification** from the **task-sp
 ### What exactly did we do with LoRA?
 We implemented **Low-Rank Adaptation (LoRA)**, a method to fine-tune large pre-trained models by injecting trainable rank decomposition matrices into each layer of the Transformer architecture.
 
-Instead of updating the entire pre-trained weight matrix $W$, we freeze $W$ and constrain the update \Delta W by representing it as the product of two low-rank matrices $A$ and $B$:
-$$ W_{new} = W + \Delta W = W + BA $$
+Instead of updating the entire pre-trained weight matrix $W$, we freeze $W$ and constrain the update $\Delta W$ by representing it as the product of two low-rank matrices $A$ and $B$:
+
+$$
+W_{new} = W + \Delta W = W + BA
+$$
+
 where $B \in \mathbb{R}^{d \times r}$ and $A \in \mathbb{R}^{r \times k}$, and the rank $r \ll \min(d, k)$.
+
 
 ### Benchmarking Highlights
 1.  **Inference Latency**:
