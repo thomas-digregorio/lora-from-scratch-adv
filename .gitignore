@@ -41,3 +41,7 @@ wandb/
 # IDEs
 .vscode/
 .idea/
+
+# Benchmarks
+results/
+logs/

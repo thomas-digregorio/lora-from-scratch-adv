@@ -88,7 +88,8 @@ def main():
         per_device_eval_batch_size=args.batch_size,
         num_train_epochs=args.epochs,
         weight_decay=0.01,
-        evaluation_strategy="epoch",
+        eval_strategy="steps", # Evaluate more frequently than just per epoch
+        eval_steps=200,      # Evaluate every 200 steps to see the curve
         save_strategy="no", # Save space during benchmarking
         logging_dir='./logs',
         logging_steps=10,

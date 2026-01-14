@@ -53,6 +53,7 @@ def inject_lora(
                 
                 # Create the LoRA layer
                 lora_layer = LoRALinear.from_linear(module, rank=rank, alpha=alpha)
+                lora_layer.to(module.weight.device)
                 
                 # Replace in parent
                 setattr(parent, child_name, lora_layer)
